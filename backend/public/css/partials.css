@@ -1,0 +1,67 @@
+#footer{
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+}
+
+#footer p{
+    color: white;
+    font-size: 20px;
+    margin: 0;
+}
+
+#footer a{
+    color: white;
+    text-decoration: none;
+}
+
+#footer a:hover{
+    text-decoration: underline;
+}
+
+#footer a:visited{
+    color: white;
+}
+
+#nav{
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    margin: 0px;
+}
+
+#nav p{
+    color: white;
+    font-size: 20px;
+    margin: 0;
+}
+
+#nav a{
+    color: white;
+    text-decoration: none;
+}
+
+.lista_nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    width: 50%;
+    height: 100%;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
