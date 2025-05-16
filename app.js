@@ -1,6 +1,17 @@
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
+const session = require('express-session');
+
+app.use(session({
+  secret: 'LosMasTontosDelMundoChaval', // puedes cambiar esto por algo más seguro
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 100000 * 60 * 60 // 100 hora
+  }
+}));
+
 
 
 const app = express();
@@ -63,6 +74,7 @@ app.post('/api/login', (req, res) => {
         return res.status(500).json({ mensaje: 'Error al consultar usuario' });
       }
       if (results.length > 0) {
+        req.session.usuario = usuario; // ✅ GUARDAR EN LA SESIÓN
         res.json({ mensaje: 'Login exitoso' });
       } else {
         res.status(401).json({ mensaje: 'Usuario o contraseña incorrectos' });
@@ -70,6 +82,25 @@ app.post('/api/login', (req, res) => {
     }
   );
 });
+
+
+app.get('/api/usuario', (req, res) => {
+  if (req.session.usuario) {
+    res.json({ usuario: req.session.usuario });
+  } else {
+    res.status(401).json({ mensaje: 'No has iniciado sesión' });
+  }
+});
+
+app.post('/api/logout', (req, res) => {
+  req.session.destroy(err => {
+    if (err) return res.status(500).json({ mensaje: 'Error al cerrar sesión' });
+    res.clearCookie('connect.sid'); // eliminar cookie
+    res.json({ mensaje: 'Sesión cerrada correctamente' });
+  });
+});
+
+
 
 // Middleware para servir archivos estáticos (ej. public/index.html)
 app.use(express.static('public'));

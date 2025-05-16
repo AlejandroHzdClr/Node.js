@@ -31,7 +31,7 @@
 #nav{
     background-color: grey;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100vw;
     height: 50px;
@@ -43,7 +43,7 @@
 #nav p{
     color: white;
     font-size: 20px;
-    margin: 0;
+    margin-right: 20px;
 }
 
 #nav a{
@@ -56,7 +56,7 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    width: 50%;
+    width: 30%;
     height: 100%;
 }
 
