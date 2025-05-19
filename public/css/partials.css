@@ -1,67 +1,93 @@
-#footer{
-    background-color: grey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 50px;
-    position: fixed;
-    bottom: 0;
-}
-
-#footer p{
-    color: white;
-    font-size: 20px;
-    margin: 0;
-}
-
-#footer a{
-    color: white;
-    text-decoration: none;
-}
-
-#footer a:hover{
-    text-decoration: underline;
-}
-
-#footer a:visited{
-    color: white;
-}
-
-#nav{
-    background-color: grey;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100vw;
-    height: 50px;
-    position: fixed;
-    top: 0;
-    margin: 0px;
-}
-
-#nav p{
-    color: white;
-    font-size: 20px;
-    margin-right: 20px;
-}
-
-#nav a{
-    color: white;
-    text-decoration: none;
-}
-
-.lista_nav{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    width: 30%;
-    height: 100%;
-}
-
+/* Reset básico */
 html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f6f8fa;
+}
+
+/* NAVBAR */
+#nav {
+    background: linear-gradient(90deg, #4f8cff 0%, #235390 100%);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    overflow-x: auto;
+    box-sizing: border-box;
+    gap: 20px;
+}
+
+.lista_nav {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+}
+
+#nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 17px;
+    transition: color 0.2s;
+    padding: 6px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+#nav a:hover, #nav a:focus {
+    background: rgba(255,255,255,0.15);
+    color: #ffe082;
+}
+
+#nav p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 60vw;
+}
+
+/* FOOTER */
+#footer {
+    background: linear-gradient(90deg, #235390 0%, #4f8cff 100%);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 16px;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.07);
+    box-sizing: border-box;
+}
+
+#footer p {
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+body {
+    /* Para que el contenido no quede debajo del nav y footer */
+    padding-top: 70px;
+    padding-bottom: 60px;
 }
