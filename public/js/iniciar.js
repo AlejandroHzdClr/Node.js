@@ -15,6 +15,11 @@ if (loginForm) {
 
     const datos = await respuesta.json();
     document.getElementById('mensaje').textContent = datos.mensaje;
+    
+    if(respuesta.ok) {
+      location.reload();
+    }
+  
   });
 }
 

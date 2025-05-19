@@ -18,13 +18,14 @@ let turno = 0;
 let cartas_mostradas = 0;
 let carta1 = null;
 let carta2 = null;
-let aciertos = 0;
+let aciertos = document.getElementById("aciertos");
 
 document.getElementById("formulario").addEventListener("submit", function(event){
     event.preventDefault();
 
     contenedor.innerHTML = "";
     cartas = [];
+    aciertos.innerHTML = 0;
 
     let numero = parseInt(document.getElementById("numero").value);
 
@@ -69,7 +70,8 @@ document.getElementById("formulario").addEventListener("submit", function(event)
                 // Desactivar clics mientras se resuelve
                 document.querySelectorAll('.carta').forEach(c => c.style.pointerEvents = "none");
                 if (carta1.innerHTML === carta2.innerHTML) {
-                    aciertos++;
+                    aciertos.innerHTML = parseInt(aciertos.innerHTML) + 1;
+                    
                     carta1.classList.add('acierto');
                     carta2.classList.add('acierto');
                     setTimeout(() => {
