@@ -23,3 +23,7 @@
 .sinMostrar {
   color: transparent; /* Oculta el contenido */
 }
+
+.acierto {
+  background-color: #28a745; /* Verde */
+}

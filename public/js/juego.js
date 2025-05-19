@@ -55,13 +55,39 @@ document.getElementById("formulario").addEventListener("submit", function(event)
     }
 
     document.querySelectorAll('.carta').forEach(carta => {
-        carta.addEventListener('click', () => {
-            if(cartas_mostradas < 2){
-                carta.classList.remove('sinMostrar');
-                cartas_mostradas += 1;
-            } else {
-                document.querySelectorAll('.carta').forEach(c => c.classList.add('sinMostrar'));
-                cartas_mostradas = 0;
+        carta.addEventListener('click', function handler() {
+            // Si ya está mostrada o acertada, no hacer nada
+            if (!carta.classList.contains('sinMostrar') || carta.classList.contains('acierto')) return;
+            // Mostrar la carta
+            carta.classList.remove('sinMostrar');
+            cartas_mostradas += 1;
+
+            if (cartas_mostradas === 1) {
+                carta1 = carta;
+            } else if (cartas_mostradas === 2) {
+                carta2 = carta;
+                // Desactivar clics mientras se resuelve
+                document.querySelectorAll('.carta').forEach(c => c.style.pointerEvents = "none");
+                if (carta1.innerHTML === carta2.innerHTML) {
+                    aciertos++;
+                    carta1.classList.add('acierto');
+                    carta2.classList.add('acierto');
+                    setTimeout(() => {
+                        carta1 = null;
+                        carta2 = null;
+                        cartas_mostradas = 0;
+                        document.querySelectorAll('.carta').forEach(c => c.style.pointerEvents = "");
+                    }, 500);
+                } else {
+                    setTimeout(() => {
+                        carta1.classList.add('sinMostrar');
+                        carta2.classList.add('sinMostrar');
+                        carta1 = null;
+                        carta2 = null;
+                        cartas_mostradas = 0;
+                        document.querySelectorAll('.carta').forEach(c => c.style.pointerEvents = "");
+                    }, 1000);
+                }
             }
         });
     });
