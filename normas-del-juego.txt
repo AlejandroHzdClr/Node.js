@@ -1,0 +1,16 @@
+Juego de memoria - juego facil
+
+- Hay x cartas (tienen que ser pares)
+
+- Hay que sacar dos cartas iguales para sumar turno
+
+- Si se falla, pasa el turno a la otra persona
+
+- Si se aciertan, se suma un punto a la persona que adivinó
+
+- Si se acierta, se quitan las cartas de la mesa
+
+- Se gana teniendo mas puntos
+
+- Se termina el juego al encontrar la ultima pareja.
+

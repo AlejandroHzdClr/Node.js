@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('nav').innerHTML = `
         <ul class="lista_nav">
           <a href="/index.html">Inicio</a>
+          <a href="/juego.html">Juego</a>
         </ul>
         <p>Bienvenido, <strong>${data.usuario}</strong></p>
       `;

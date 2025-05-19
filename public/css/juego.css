@@ -1,0 +1,25 @@
+#contenedor{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;   
+}
+
+.carta {
+  width: 100px;
+  height: 150px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #2e86de; /* color de dorso */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.sinMostrar {
+  color: transparent; /* Oculta el contenido */
+}
