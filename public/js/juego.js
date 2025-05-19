@@ -1,7 +1,6 @@
 class Carta {
-    constructor(valor, rep){
+    constructor(valor){
         this.valor = valor;
-        this.rep = rep;
     }
 
     generarCarta(){
@@ -22,16 +21,28 @@ document.getElementById("formulario").addEventListener("submit", function(event)
     contenedor.innerHTML = "";
     cartas = [];
 
-    let numero = document.getElementById("numero").value;
+    let numero = parseInt(document.getElementById("numero").value);
 
-    for(let i = 0; i < numero; i++){
-        let valor = Math.floor(Math.random() * 10) + 1;
-        let rep = Math.floor(Math.random() * 4) + 1;
-        let carta = new Carta(valor, rep);
+    // Generar números únicos del 1 al numero
+    let valoresUnicos = [];
+    for(let i = 1; i <= numero; i++) {
+        valoresUnicos.push(i);
+    }
+
+    // Barajar los valores únicos (opcional)
+    valoresUnicos.sort(() => Math.random() - 0.5);
+
+    // Crear pares de cartas con valores únicos
+    for(let i = 0; i < valoresUnicos.length; i++){
+        let valor = valoresUnicos[i];
+        let carta = new Carta(valor);
         cartas.push(carta);
-        let carta2 = new Carta(valor, rep);
+        let carta2 = new Carta(valor);
         cartas.push(carta2);
     }
+
+    // Barajar todas las cartas
+    cartas.sort(() => Math.random() - 0.5);
 
     for(let i = 0; i < cartas.length; i++){
         let carta = cartas[i].generarCarta();
