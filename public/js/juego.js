@@ -14,6 +14,11 @@ class Carta {
 
 let cartas = [];
 let contenedor = document.getElementById("contenedor");
+let turno = 0;
+let cartas_mostradas = 0;
+let carta1 = null;
+let carta2 = null;
+let aciertos = 0;
 
 document.getElementById("formulario").addEventListener("submit", function(event){
     event.preventDefault();
@@ -51,7 +56,13 @@ document.getElementById("formulario").addEventListener("submit", function(event)
 
     document.querySelectorAll('.carta').forEach(carta => {
         carta.addEventListener('click', () => {
-            carta.classList.remove('sinMostrar');
+            if(cartas_mostradas < 2){
+                carta.classList.remove('sinMostrar');
+                cartas_mostradas += 1;
+            } else {
+                document.querySelectorAll('.carta').forEach(c => c.classList.add('sinMostrar'));
+                cartas_mostradas = 0;
+            }
         });
     });
 
