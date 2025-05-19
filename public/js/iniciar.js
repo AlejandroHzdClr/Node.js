@@ -1,19 +1,22 @@
-document.getElementById('loginForm').addEventListener('submit', async function (e) {
-  e.preventDefault();
+const loginForm = document.getElementById('loginForm');
+if (loginForm) {
+  loginForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
 
-  const usuario = document.getElementById('usuario').value;
-  const contrasena = document.getElementById('contrasena').value;
+    const usuario = document.getElementById('usuario').value;
+    const contrasena = document.getElementById('contrasena').value;
 
-  const respuesta = await fetch('/api/login', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'include',
-    body: JSON.stringify({ usuario, password: contrasena })
+    const respuesta = await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({ usuario, password: contrasena })
+    });
+
+    const datos = await respuesta.json();
+    document.getElementById('mensaje').textContent = datos.mensaje;
   });
-
-  const datos = await respuesta.json();
-  document.getElementById('mensaje').textContent = datos.mensaje;
-});
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   fetch('/api/usuario', {
