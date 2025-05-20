@@ -28,13 +28,19 @@ class Juego{
 }
 
 const juegos = [
-    new Juego('Juego de memoria', 'Un juego de cartas para mejorar el nivel de tu memoria', '../memoria.html'),
-]
+    new Juego('Memoria', 'Un juego de cartas para mejorar el nivel de tu memoria', '../memoria.html'),
+    new Juego('Bloques', 'Hay unos recuadros, rellena y consigue puntos', '../bloques.html'),
+];
+
+const contenedorJuegosPadre = document.createElement('div');
+contenedorJuegosPadre.classList.add('juegos');
+
+juegos.forEach(juego => {
+    const juegoElemento = juego.crearJuego();
+    contenedorJuegosPadre.appendChild(juegoElemento);
+});
 
 const contenedorJuegos = document.getElementById('juegos');
 if (contenedorJuegos) {
-    juegos.forEach(juego => {
-        const juegoElemento = juego.crearJuego();
-        contenedorJuegos.appendChild(juegoElemento);
-    });
+    contenedorJuegos.appendChild(contenedorJuegosPadre);
 }
