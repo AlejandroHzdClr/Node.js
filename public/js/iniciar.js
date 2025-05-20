@@ -1,4 +1,4 @@
-const loginForm = document.getElementById('formulario');
+const loginForm = document.getElementById('formularioLogin');
 if (loginForm) {
   loginForm.addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>Bienvenido, <strong>${data.usuario}</strong></p>
       `;
       // Oculta el formulario y el título solo si existen
-      const form = document.getElementById('formulario');
+      const form = document.getElementById('formularioLogin');
       if (form) form.style.display = 'none';
       const loginTitle = document.getElementsByClassName('login')[0];
       if (loginTitle) loginTitle.style.display = 'none';
