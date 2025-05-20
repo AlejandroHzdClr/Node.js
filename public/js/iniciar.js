@@ -1,4 +1,4 @@
-const loginForm = document.getElementById('loginForm');
+const loginForm = document.getElementById('formulario');
 if (loginForm) {
   loginForm.addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('nav').innerHTML = `
         <ul class="lista_nav">
           <a href="/index.html">Inicio</a>
-          <a href="/juego.html">Juego</a>
+          <a href="/juegos.html">Juego</a>
         </ul>
         <p>Bienvenido, <strong>${data.usuario}</strong></p>
       `;

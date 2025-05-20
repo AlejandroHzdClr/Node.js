@@ -1,11 +1,12 @@
-document.getElementById('registroForm').addEventListener('submit', async function (e) {
+document.getElementById('formulario').addEventListener('submit', async function (e) {
   e.preventDefault();
 
   const usuario = document.getElementById('usuario').value;
-  const password = document.getElementById('password').value;
+  const password = document.getElementById('contrasena').value;
 
   const respuesta = await fetch('/api/registro', {
     method: 'POST',
+    credentials: 'include',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ usuario, password })
   });

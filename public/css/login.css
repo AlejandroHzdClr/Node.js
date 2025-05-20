@@ -41,15 +41,15 @@
     outline: none;
 }
 
-#loginForm{
+#formulario{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-#loginForm input[type="text"],
-#loginForm input[type="password"] {
+#formulario input[type="text"],
+#formulario input[type="password"] {
     width: 250px;
     padding: 12px 16px;
     margin-bottom: 16px;
@@ -63,9 +63,31 @@
     box-shadow: 0 2px 8px rgba(70,199,250,0.07);
 }
 
-#loginForm input[type="text"]:focus,
-#loginForm input[type="password"]:focus {
+#formulario input[type="text"]:focus,
+#formulario input[type="password"]:focus {
     border: 2px solid #1e90ff;
     box-shadow: 0 4px 16px rgba(30,144,255,0.15);
     background: #fff;
+}
+
+#registrar_btn {
+    background: linear-gradient(90deg, #46c7fa 0%, #1e90ff 100%);
+    width: 50%;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(30,144,255,0.15);
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    margin-top: 20px;
+}
+
+#registrar_btn:hover, #registrar_btn:focus {
+    background: linear-gradient(90deg, #1e90ff 0%, #46c7fa 100%);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 24px rgba(30,144,255,0.25);
+    outline: none;
 }
