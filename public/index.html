@@ -4,19 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
-  <link rel="stylesheet" href="/css/partials.css">
+  <link rel="stylesheet" href="css/partials.css">
+  <link rel="stylesheet" href="css/login.css">
   <script defer src="js/iniciar.js"></script>
 </head>
 <body>
 
   <nav id="nav"></nav>
 
-  <h1>Login</h1>
-  <form id="loginForm">
-      <label>Usuario: <input type="text" id="usuario" required></label><br>
-      <label>Contraseña: <input type="password" id="contrasena" required></label><br>
-      <button type="submit">Iniciar sesión</button>
-  </form>
+  <div id="main">
+    <h1>Login</h1>
+    <form id="loginForm">
+        <label>Usuario:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="usuario" required></label><br>
+        <label>Contraseña: <input type="password" id="contrasena" required></label><br>
+        <button type="submit" id="iniciar_sesion">Iniciar sesión</button>
+    </form>
+  </div>
 
   <p id="mensaje"></p>
 
