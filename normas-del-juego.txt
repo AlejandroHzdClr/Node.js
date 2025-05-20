@@ -14,3 +14,12 @@ Juego de memoria - juego facil
 
 - Se termina el juego al encontrar la ultima pareja.
 
+Bloques - juego medio (creo)
+
+- Un tablero funcional de 10 de ancho y 20 de largo
+
+- Salen fichas de arriba del todo
+
+- Bajan poco a poco, se pueden rotar y bajar manualmente
+
+- Cada vez que una fila esté llena, se elimina.
