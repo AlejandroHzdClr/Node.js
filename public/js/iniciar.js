@@ -39,6 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
         </ul>
         <p>Bienvenido, <strong>${data.usuario}</strong></p>
       `;
+      // Oculta el formulario y el título solo si existen
+      const form = document.getElementById('formulario');
+      if (form) form.style.display = 'none';
+      const loginTitle = document.getElementsByClassName('login')[0];
+      if (loginTitle) loginTitle.style.display = 'none';
+      const intro = document.getElementById('intro');
+      if (intro) intro.style.display = 'block';
     })
     .catch(() => {
       document.getElementById('nav').innerHTML = `
