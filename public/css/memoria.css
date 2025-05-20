@@ -1,14 +1,123 @@
+body {
+    background: #eaf4fb;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #235390;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+#formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 32px 40px;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(30,144,255,0.10);
+    margin: 30px auto 20px auto;
+    max-width: 350px;
+}
+
+#formulario label {
+    font-size: 1.1em;
+    color: #235390;
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#formulario input[type="text"],
+#formulario input[type="number"],
+#formulario input[type="password"] {
+    width: 180px;
+    padding: 10px 14px;
+    border: 1.5px solid #46c7fa;
+    border-radius: 16px;
+    font-size: 1em;
+    color: #333;
+    background: #f8fbff;
+    transition: border 0.2s, box-shadow 0.2s;
+    outline: none;
+    margin-left: 10px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(70,199,250,0.07);
+}
+
+#formulario input:focus {
+    border: 2px solid #1e90ff;
+    box-shadow: 0 4px 16px rgba(30,144,255,0.15);
+    background: #fff;
+}
+
+#formulario button {
+    background: linear-gradient(90deg, #46c7fa 0%, #1e90ff 100%);
+    width: 70%;
+    height: 44px;
+    border-radius: 22px;
+    border: none;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(30,144,255,0.15);
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    margin-top: 18px;
+}
+
+#formulario button:hover, #formulario button:focus {
+    background: linear-gradient(90deg, #1e90ff 0%, #46c7fa 100%);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 24px rgba(30,144,255,0.25);
+    outline: none;
+}
+
+#mensaje {
+    text-align: center;
+    color: #e74c3c;
+    font-size: 1.1em;
+    margin-top: 10px;
+    min-height: 24px;
+}
+
+#aciertos, #acierto{
+    text-align: center;
+    font-size: 1.2em;
+    color: #28a745;
+    margin-top: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#aciertos_cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
 #contenedor {
-    width: 100vw;
+    width: 90vw;
     min-height: 60vh;
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding: 32px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    margin: 40px auto 0 auto; /* Centra vertical y horizontalmente */
+    align-items: flex-start;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(30,144,255,0.10);
     box-sizing: border-box;
-    background: #f6f8fa;
+    border: none;
 }
 
 .carta {
