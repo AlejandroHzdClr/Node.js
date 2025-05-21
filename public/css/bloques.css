@@ -6,7 +6,6 @@ body {
     height: 100vh;
     margin: 0;
     color: white;
-    font-family: monospace;
     user-select: none;
   }
   #tablero {
